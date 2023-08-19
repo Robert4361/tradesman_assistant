@@ -1,0 +1,11 @@
+.bank-form {
+    display: flex;
+    gap: var(--space-xs);
+    width: 100%;
+    justify-content: space-between;
+
+    > .rows {
+        display: flex;
+        gap: var(--space-xs);
+    }
+}

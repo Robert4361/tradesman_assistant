@@ -1,10 +1,12 @@
-<div class="bank-card">
-  <div class="info">
-    <p>Name: <%= bank.name %></p>
-    <p>PID: <%= bank.pid %></p>
+<%= turbo_frame_tag bank do %>
+  <div class="bank-card">
+    <div class="info">
+      <p>Name: <%= bank.name %></p>
+      <p>PID: <%= bank.pid %></p>
+    </div>
+    <div class="actions">
+      <%= link_to "Edit", edit_bank_path(bank) %>
+      <%= button_to "Delete", bank_path(bank), method: :delete, data: { turbo_confirm: "Are you sure?", turbo_frame: "_top" } %>
+    </div>
   </div>
-  <div class="actions">
-    <%= link_to "Edit", edit_bank_path(bank) %>
-    <%= button_to "Delete", bank_path(bank), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-  </div>
-</div>
+<% end %>

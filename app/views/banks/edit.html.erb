@@ -1,5 +1,7 @@
 <main class="container">
   <%= link_to "Back to bank list", banks_path %>
 
-  <%= render "form", bank: @bank %>
+  <%= turbo_frame_tag @bank do %>
+    <%= render "form", bank: @bank %>
+  <% end %>
 </main>

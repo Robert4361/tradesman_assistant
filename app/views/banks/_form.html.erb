@@ -1,17 +1,19 @@
-<%= form_with model: bank do |form| %>
+<%= form_with model: bank, class: "bank-form" do |form| %>
   <% if bank.errors.any? %>
     <div class="error-message">
       <%= bank.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
 
-  <div class="row">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div> <br>
-  <div class="row">
-    <%= form.label :pid %>
-    <%= form.number_field :pid %>
-  </div> <br>
+  <div class="rows">
+    <div class="row">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="row">
+      <%= form.label :pid %>
+      <%= form.number_field :pid %>
+    </div>
+  </div>
   <%= form.submit %>
 <% end %>
