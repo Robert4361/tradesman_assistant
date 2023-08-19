@@ -1,7 +1,8 @@
 <div class="bank-card">
-  Name: <%= bank.name %>
-  PID: <%= bank.pid %>
-
+  <div class="info">
+    <p>Name: <%= bank.name %></p>
+    <p>PID: <%= bank.pid %></p>
+  </div>
   <div class="actions">
     <%= link_to "Edit", edit_bank_path(bank) %>
     <%= button_to "Delete", bank_path(bank), method: :delete, data: { turbo_confirm: "Are you sure?" } %>

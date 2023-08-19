@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "config/_reset.css";
+@import "config/_variables.css";
+
+@import "layouts/_container.css";
