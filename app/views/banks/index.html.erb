@@ -1,0 +1,7 @@
+<h1>List of banks</h1>
+<% @banks.each do |bank| %>
+  <div class="bank-card">
+    <p>Name: <%= bank.name %></p>
+    <p>PID: <%= bank.pid %></p>
+  </div>
+<% end %>
