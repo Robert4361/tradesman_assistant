@@ -1,0 +1,9 @@
+<div class="bank-card">
+  Name: <%= bank.name %>
+  PID: <%= bank.pid %>
+
+  <div class="actions">
+    <%= link_to "Edit", edit_bank_path(bank) %>
+    <%= button_to "Delete", bank_path(bank), method: :delete %>
+  </div>
+</div>

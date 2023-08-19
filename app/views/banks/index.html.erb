@@ -1,10 +1,11 @@
 <h1>List of banks</h1>
 
-<%= link_to "New bank", new_bank_path %>
-
-<% @banks.each do |bank| %>
-  <div class="bank-card">
-    <p>Name: <%= bank.name %></p>
-    <p>PID: <%= bank.pid %></p>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
   </div>
 <% end %>
+
+<%= link_to "New bank", new_bank_path %>
+
+<%= render @banks %>
