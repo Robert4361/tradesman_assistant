@@ -18,6 +18,17 @@ class BanksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @bank.update(bank_params)
+      redirect_to root_path, notice: "Bank was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_bank
