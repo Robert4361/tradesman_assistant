@@ -1,11 +1,13 @@
-<h1>List of banks</h1>
+<main class="container">
+  <h1>List of banks</h1>
 
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
 
-<%= link_to "New bank", new_bank_path %>
+  <%= link_to "New bank", new_bank_path %>
 
-<%= render @banks %>
+  <%= render @banks %>
+</main>
