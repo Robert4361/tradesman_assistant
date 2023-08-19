@@ -4,6 +4,6 @@
 
   <div class="actions">
     <%= link_to "Edit", edit_bank_path(bank) %>
-    <%= button_to "Delete", bank_path(bank), method: :delete %>
+    <%= button_to "Delete", bank_path(bank), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
   </div>
 </div>
