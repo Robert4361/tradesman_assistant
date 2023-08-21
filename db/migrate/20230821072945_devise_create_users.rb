@@ -13,10 +13,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.integer :post_number, null: false
       t.string :city, null: false
       t.integer :pid, null: false
-      t.integer :iban, null: false
+      t.string :iban, null: false
       t.text :business_description, null: false
       t.references :bank, null: false, foreign_key: true
-      t.boolean :admin, default: false
+      t.boolean :admin?, default: false
+      t.boolean :activated?, default: false
 
       ## Recoverable
       t.string   :reset_password_token
