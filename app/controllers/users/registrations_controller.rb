@@ -6,11 +6,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super
+      @bank_options = Bank.all.map{ |b| [ b.name, b.id ] }
+      super
   end
 
   # POST /resource
   def create
+    @bank_options = Bank.all.map{ |b| [ b.name, b.id ] }
     super
   end
 
@@ -42,12 +44,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :business_name,
+                                                       :address, :post_number, :city,
+                                                       :pid, :iban, :business_description, :bank_id])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :business_name,
+                                                              :address, :post_number, :city,
+                                                              :pid, :iban, :business_description, :bank_id])
   end
 
   # The path used after sign up.
