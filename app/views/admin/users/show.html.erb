@@ -1,0 +1,46 @@
+<h1>User information</h1>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+<div class="user-card">
+  <div class="info">
+    <p>
+      First name: <%= @user.first_name %>
+    </p>
+    <p>
+      Last name: <%= @user.last_name %>
+    </p>
+    <p>
+      Email: <%= @user.email %>
+    </p>
+    <p>
+      Business name: <%= @user.business_name %>
+    </p>
+    <p>
+      Postal number: <%= @user.post_number %>
+    </p>
+    <p>
+      City: <%= @user.city %>
+    </p>
+    <p>
+      PID: <%= @user.pid %>
+    </p>
+    <p>
+      Business description: <%= @user.business_description %>
+    </p>
+
+    <div id="activated">
+      <p>
+        Activation status: <%= @user.activated %>
+      </p>
+      <div class="actions">
+        <% unless @user.activated? %>
+          <%= button_to "Activate user", admin_activate_user_path(@user), method: :put %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>

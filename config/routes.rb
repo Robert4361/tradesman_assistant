@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :banks
+    put "/activate/:id", to: "users#activate", as: "activate_user"
   end
 end
