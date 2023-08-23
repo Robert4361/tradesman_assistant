@@ -1,0 +1,16 @@
+<div class="user-card-short">
+  <div class="info">
+    <p>
+      First name: <%= user.first_name %>
+    </p>
+    <p>
+      Last name: <%= user.last_name %>
+    </p>
+    <p>
+      Business name: <%= user.business_name %>
+    </p>
+    <p>
+      <%= link_to "Profile", admin_user_path(user) %>
+    </p>
+  </div>
+</div>
