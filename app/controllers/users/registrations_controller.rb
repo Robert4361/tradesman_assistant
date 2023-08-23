@@ -12,12 +12,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @bank_options = Bank.all.map{ |b| [ b.name, b.id ] }
     super
   end
 
   # GET /resource/edit
   def edit
+    @bank_options = Bank.all.map{ |b| [ b.name, b.id ] }
     super
   end
 
