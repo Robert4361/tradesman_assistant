@@ -12,7 +12,10 @@ class Admin::BanksController < ApplicationController
   def create
     @bank = Bank.new(bank_params)
     if @bank.save
-      redirect_to admin_banks_path, notice: "Bank was successfully created."
+      respond_to do |format|
+        format.html { redirect_to admin_banks_path, notice: "Bank was successfully created." }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end

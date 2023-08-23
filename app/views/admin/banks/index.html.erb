@@ -7,7 +7,11 @@
     </div>
   <% end %>
 
-  <%= link_to "New bank", new_admin_bank_path %>
+  <%= link_to "New bank", new_admin_bank_path, data: { turbo_frame: dom_id(Bank.new) } %>
 
-  <%= render @banks %>
+  <%= turbo_frame_tag Bank.new %>
+
+  <%= turbo_frame_tag "banks" do %>
+    <%= render @banks %>
+  <% end %>
 </main>
