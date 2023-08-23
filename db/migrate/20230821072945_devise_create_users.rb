@@ -16,8 +16,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :iban, null: false
       t.text :business_description, null: false
       t.references :bank, null: false, foreign_key: true
-      t.boolean :admin?, default: false
-      t.boolean :activated?, default: false
+      t.boolean :admin, default: false
+      t.boolean :activated, default: false
 
       ## Recoverable
       t.string   :reset_password_token

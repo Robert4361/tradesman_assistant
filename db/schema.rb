@@ -31,8 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_21_072945) do
     t.string "iban", null: false
     t.text "business_description", null: false
     t.integer "bank_id", null: false
-    t.boolean "admin?", default: false
-    t.boolean "activated?", default: false
+    t.boolean "admin", default: false
+    t.boolean "activated", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
