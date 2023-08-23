@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "banks#index"
-  resources :banks
 
   namespace :admin do
     resources :users
+    resources :banks
   end
 end

@@ -1,4 +1,4 @@
-class BanksController < ApplicationController
+class Admin::BanksController < ApplicationController
   before_action :set_bank, only: [:edit, :update, :destroy]
 
   def index
@@ -12,7 +12,7 @@ class BanksController < ApplicationController
   def create
     @bank = Bank.new(bank_params)
     if @bank.save
-      redirect_to banks_path, notice: "Bank was successfully created."
+      redirect_to admin_banks_path, notice: "Bank was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,7 +23,7 @@ class BanksController < ApplicationController
 
   def update
     if @bank.update(bank_params)
-      redirect_to banks_path, notice: "Bank was successfully updated."
+      redirect_to admin_banks_path, notice: "Bank was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -31,7 +31,7 @@ class BanksController < ApplicationController
 
   def destroy
     @bank.destroy
-    redirect_to banks_path, notice: "Bank was successfully destroyed."
+    redirect_to admin_banks_path, notice: "Bank was successfully destroyed."
   end
 
   private

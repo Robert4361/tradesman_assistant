@@ -5,8 +5,8 @@
       <p>PID: <%= bank.pid %></p>
     </div>
     <div class="actions">
-      <%= link_to "Edit", edit_bank_path(bank) %>
-      <%= button_to "Delete", bank_path(bank), method: :delete, data: { turbo_confirm: "Are you sure?", turbo_frame: "_top" } %>
+      <%= link_to "Edit", edit_admin_bank_path(bank) %>
+      <%= button_to "Delete", admin_bank_path(bank), method: :delete, data: { turbo_confirm: "Are you sure?", turbo_frame: "_top" } %>
     </div>
   </div>
 <% end %>
