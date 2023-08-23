@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   root "banks#index"
   resources :banks
 
+  namespace :admin do
+    resources :users
+  end
 end
