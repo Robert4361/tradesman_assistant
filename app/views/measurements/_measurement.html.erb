@@ -1,0 +1,11 @@
+<%= turbo_frame_tag measurement do %>
+  <div class="measurement-card">
+    <div class="info">
+      <p>Name: <%= measurement.name %></p>
+    </div>
+    <div class="actions">
+      <%= link_to "Edit", edit_measurement_path(measurement) %>
+      <%= button_to "Delete", measurement_path(measurement), method: :delete, data: { turbo_confirm: "Are you sure?", turbo_frame: "_top" } %>
+    </div>
+  </div>
+<% end %>

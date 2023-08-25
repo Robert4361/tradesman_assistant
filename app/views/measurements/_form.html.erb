@@ -1,0 +1,15 @@
+<%= form_with model: measurement, class: "measurement-form" do |form| %>
+  <% if measurement.errors.any? %>
+    <div class="error-message">
+      <%= measurement.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <div class="rows">
+    <div class="row">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+  </div>
+  <%= form.submit %>
+<% end %>

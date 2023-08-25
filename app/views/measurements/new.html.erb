@@ -1,0 +1,7 @@
+<main class="container">
+  <%= link_to "Back to measurement list", measurements_path %>
+
+  <%= turbo_frame_tag @measurement do %>
+    <%= render "form", measurement: @measurement %>
+  <% end %>
+</main>

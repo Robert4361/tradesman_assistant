@@ -1,0 +1,17 @@
+<main class="container">
+  <h1>List of measurements</h1>
+
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+
+  <%= link_to "New measurement", new_measurement_path, data: { turbo_frame: dom_id(Measurement.new) } %>
+
+  <%= turbo_frame_tag Measurement.new %>
+
+  <%= turbo_frame_tag "measurements" do %>
+    <%= render @measurements %>
+  <% end %>
+</main>
