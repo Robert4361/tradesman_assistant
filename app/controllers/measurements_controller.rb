@@ -10,7 +10,7 @@ class MeasurementsController < ApplicationController
   end
 
   def create
-    @measurement = Measurement.new(measurement_params)
+    @measurement = current_user.measurements.new(measurement_params)
     if @measurement.save
       respond_to do |format|
         format.html { redirect_to measurements_path, notice: "Measurement was successfully created." }
