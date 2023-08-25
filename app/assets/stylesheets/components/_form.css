@@ -1,8 +1,11 @@
-.bank-form {
+.bank-form, .measurement-form {
     display: flex;
     gap: var(--space-xs);
     width: 100%;
     justify-content: space-between;
+    margin-bottom: var(--space-m);
+    background-color: var(--color-white);
+    padding: var(--space-xs) var(--space-m);
 
     > .rows {
         display: flex;

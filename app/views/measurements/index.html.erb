@@ -1,5 +1,4 @@
 <main class="container">
-  <h1>List of measurements</h1>
 
   <% flash.each do |type, msg| %>
     <div>
@@ -7,7 +6,10 @@
     </div>
   <% end %>
 
-  <%= link_to "New measurement", new_measurement_path, data: { turbo_frame: dom_id(Measurement.new) } %>
+  <div class="header">
+    <h1>List of measurements</h1>
+    <%= link_to "New measurement", new_measurement_path, data: { turbo_frame: dom_id(Measurement.new) } %>
+  </div>
 
   <%= turbo_frame_tag Measurement.new %>
 
