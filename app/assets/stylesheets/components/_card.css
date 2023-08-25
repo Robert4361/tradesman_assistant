@@ -1,4 +1,4 @@
-.bank-card, .measurement-card {
+.bank-card, .measurement-card, .user-card-short {
     display: flex;
     justify-content: space-between;
     align-items: center;

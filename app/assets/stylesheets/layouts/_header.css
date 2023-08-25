@@ -6,4 +6,5 @@
     margin-top: var(--space-m);
     margin-bottom: var(--space-xl);
     align-items: center;
+    margin-left: var(--space-s);
 }
