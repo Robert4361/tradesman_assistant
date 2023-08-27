@@ -1,0 +1,15 @@
+header {
+    background-color: var(--color-primary);
+    padding: var(--space-m);
+    display: flex;
+    justify-content: space-between;
+    > div {
+        display: flex;
+        gap: var(--space-m);
+        align-items: center;
+    }
+
+    & a {
+        color: var(--color-white);
+    }
+}
