@@ -2,6 +2,6 @@
   <%= link_to "Back to services list", services_path %>
 
   <%= turbo_frame_tag @service do %>
-    <%= render "form", service: @service %>
+    <%= render "form", service: @service, measurement_options: @measurement_options %>
   <% end %>
 </main>
