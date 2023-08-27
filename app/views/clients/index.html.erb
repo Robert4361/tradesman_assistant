@@ -12,7 +12,7 @@
   </div>
 
   <% @clients.each do |client| %>
-    <div class="client-info-short">
+    <div class="client-card-short">
       Name: <%= link_to client.first_name + " " + client.last_name, client %>
     </div>
   <% end %>

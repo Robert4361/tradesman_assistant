@@ -17,3 +17,35 @@
         align-items: center;
     }
 }
+
+.user-card, .client-card {
+    > .info {
+        display: flex;
+        gap: var(--space-s);
+        flex-direction: column;
+        max-width: 40rem;
+        background-color: var(--color-white);
+        border-radius: var(--border-radius);
+        padding: var(--space-s);
+        box-shadow: var(--shadow-small);
+    }
+    >.actions {
+        gap: var(--space-s);
+        max-width: 40rem;
+        background-color: var(--color-white);
+        border-radius: var(--border-radius);
+        padding: var(--space-s);
+        box-shadow: var(--shadow-small);
+    }
+}
+
+.client-card-short {
+    display: flex;
+    align-items: center;
+    gap: var(--space-s);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+    margin-bottom: var(--space-m);
+    padding: var(--space-xs) var(--space-m);
+}
