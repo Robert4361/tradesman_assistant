@@ -2,7 +2,7 @@ class MeasurementsController < ApplicationController
   before_action :set_measurement, only: [:edit, :update, :destroy]
 
   def index
-    @measurements = Measurement.all
+    @measurements = current_user.measurements.all
   end
 
   def new
