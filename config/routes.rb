@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :measurements
+  resources :services
 
 end
