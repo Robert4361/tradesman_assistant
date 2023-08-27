@@ -1,0 +1,16 @@
+<div class="client-card">
+    <div class="info">
+      <p>First name: <%= client.first_name %></p>
+      <p>Last name: <%= client.last_name %></p>
+      <p>Address: <%= client.address %></p>
+      <p>Post number: <%= client.post_number %></p>
+      <p>City: <%= client.city %></p>
+      <p>Pid: <%= client.pid %></p>
+    </div>
+  <div class="actions">
+    <%= link_to "Edit this client", edit_client_path(client) %> |
+    <%= link_to "Back to clients", clients_path %>
+
+    <%= button_to "Destroy this client", client, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+  </div>
+</div>

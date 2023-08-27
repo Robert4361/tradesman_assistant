@@ -1,0 +1,41 @@
+<%= form_with model: client, class: "client-form" do |form| %>
+  <% if client.errors.any? %>
+    <div class="error-message">
+      <%= client.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+  <div class="rows">
+    <div class="row">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+
+    <div class="row">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div class="row">
+      <%= form.label :address %>
+      <%= form.text_field :address %>
+    </div>
+
+    <div class="row">
+      <%= form.label :post_number %>
+      <%= form.number_field :post_number %>
+    </div>
+
+    <div class="row">
+      <%= form.label :city %>
+      <%= form.text_field :city %>
+    </div>
+
+    <div class="row">
+      <%= form.label :pid %>
+      <%= form.number_field :pid %>
+    </div>
+    <div class="row">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

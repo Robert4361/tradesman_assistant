@@ -12,3 +12,25 @@
         gap: var(--space-xs);
     }
 }
+
+.client-form {
+    display: flex;
+    gap: var(--space-s);
+    flex-direction: column;
+    max-width: 30rem;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    padding: var(--space-s);
+    box-shadow: var(--shadow-small);
+
+    > .rows {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+
+        > .row {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
