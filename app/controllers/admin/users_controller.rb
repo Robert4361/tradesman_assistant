@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:show, :activate]
+  before_action :check_if_admin?
 
   def index
     if params[:activated] == "false"
@@ -26,5 +27,9 @@ class Admin::UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def check_if_admin?
+    redirect_to root_path unless current_user.admin?
   end
 end

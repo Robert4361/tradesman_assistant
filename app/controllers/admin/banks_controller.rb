@@ -1,5 +1,6 @@
 class Admin::BanksController < ApplicationController
   before_action :set_bank, only: [:edit, :update, :destroy]
+  before_action :check_if_admin?
 
   def index
     @banks = Bank.all
@@ -41,6 +42,10 @@ class Admin::BanksController < ApplicationController
 
   def set_bank
     @bank = Bank.find(params[:id])
+  end
+
+  def check_if_admin?
+    redirect_to root_path unless current_user.admin?
   end
 
   def bank_params
