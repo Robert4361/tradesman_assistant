@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_27_095603) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_27_131518) do
   create_table "banks", force: :cascade do |t|
     t.string "name"
     t.integer "pid"
@@ -37,6 +37,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_095603) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_measurements_on_user_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.string "price"
+    t.integer "measurement_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["measurement_id"], name: "index_services_on_measurement_id"
+    t.index ["user_id"], name: "index_services_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,5 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_095603) do
 
   add_foreign_key "clients", "users"
   add_foreign_key "measurements", "users"
+  add_foreign_key "services", "measurements"
+  add_foreign_key "services", "users"
   add_foreign_key "users", "banks"
 end
