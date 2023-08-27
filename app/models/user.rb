@@ -7,6 +7,7 @@ class User < ApplicationRecord
   belongs_to :bank
   has_many :clients
   has_many :measurements
+  has_many :services
 
   validates :first_name, :last_name, :business_name, :business_description, :pid, :post_number, :business_name, :iban, :city, presence: true
   validates :iban, :pid, uniqueness: true
