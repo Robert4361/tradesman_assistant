@@ -7,6 +7,7 @@ class ServicesController < ApplicationController
   end
 
   def new
+    @measurement_options = current_user.measurements.all.map{ |m| [ m.name, m.id ] }
     @service = Service.new
   end
 
@@ -23,6 +24,7 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    @measurement_options = current_user.measurements.all.map{ |m| [ m.name, m.id ] }
   end
 
   def update

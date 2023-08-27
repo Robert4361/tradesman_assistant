@@ -1,4 +1,4 @@
-.bank-form, .measurement-form {
+.bank-form, .measurement-form, .service-form {
     display: flex;
     gap: var(--space-xs);
     width: 100%;
@@ -10,6 +10,11 @@
     > .rows {
         display: flex;
         gap: var(--space-xs);
+
+        > .submit {
+            display: flex;
+            align-items: end;
+        }
     }
 }
 

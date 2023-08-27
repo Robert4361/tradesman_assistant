@@ -1,0 +1,7 @@
+<main class="container">
+  <%= link_to "Back to services list", services_path %>
+
+  <%= turbo_frame_tag @service do %>
+    <%= render "form", service: @service %>
+  <% end %>
+</main>

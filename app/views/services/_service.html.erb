@@ -1,0 +1,13 @@
+<%= turbo_frame_tag service do %>
+  <div class="service-card">
+    <div class="info">
+      <p>Name: <%= service.name %></p>
+      <p>Price: <%= service.price %></p>
+      <p>Measurement: <%= service.measurement.name %></p>
+    </div>
+    <div class="actions">
+      <%= link_to "Edit", edit_service_path(service) %>
+      <%= button_to "Delete", service_path(service), method: :delete, data: { turbo_confirm: "Are you sure?", turbo_frame: "_top" } %>
+    </div>
+  </div>
+<% end %>

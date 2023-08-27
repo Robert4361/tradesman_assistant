@@ -1,0 +1,25 @@
+<%= form_with model: service, class: "service-form" do |form| %>
+  <% if service.errors.any? %>
+    <div class="error-message">
+      <%= service.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <div class="rows">
+    <div class="row">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div class="row">
+      <%= form.label :price %>
+      <%= form.number_field :price %>
+    </div>
+    <div class="row">
+      <%= form.label :measurement %>
+      <%= form.select(:measurement_id, @measurement_options) %>
+    </div>
+    <div class="submit">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>
