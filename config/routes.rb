@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   resources :measurements
   resources :services
+  resources :bills
 
 end
