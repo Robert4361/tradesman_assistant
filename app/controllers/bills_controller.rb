@@ -9,11 +9,12 @@ class BillsController < ApplicationController
   end
 
   def new
-    @bill = Bill.new
+    @bill = current_user.bills.new
   end
 
   def create
-    @bill = current_user.bills.new(bill_params)
+    @bill = current_user.bills.build(bill_params)
+    binding.pry
     if @bill.save
       respond_to do |format|
         render @bill
@@ -35,6 +36,6 @@ class BillsController < ApplicationController
   end
 
   def bill_params
-    params.require(:bill).permit(:date, :discount, bill_items_attributes: [:quantity, :service_id ])
+    params.require(:bill).permit(:discount, :client_id, bill_items_attributes: [:id, :quantity, :service_id, :_destroy])
   end
 end

@@ -1,0 +1,15 @@
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <div class="row">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <div class="row">
+    <%= f.label :service %>
+    <%= f.select(:service_id, current_user.services.all.map{ |s| [ s.name, s.id ] }) %>
+  </div>
+
+  <button type="button" data-action="nested-form#remove">Remove bill item</button>
+
+  <%= f.hidden_field :_destroy %>
+</div>
