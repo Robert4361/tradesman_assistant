@@ -1,0 +1,17 @@
+<main class="container">
+
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+
+  <div class="header">
+    <h1>List of bills</h1>
+    <%= link_to "New bill", new_bill_path %>
+  </div>
+
+  <%= @bills.each do |bill| %>
+  <p>Client: <%= bill.client.first_name + " " + bill.client.last_name %></p>
+  <% end %>
+</main>
