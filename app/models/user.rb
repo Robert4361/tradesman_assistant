@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :clients
   has_many :measurements
   has_many :services
+  has_many :bills
 
   validates :first_name, :last_name, :business_name, :business_description, :pid, :post_number, :business_name, :iban, :city, presence: true
   validates :iban, :pid, uniqueness: true
