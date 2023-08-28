@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_27_131518) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_074238) do
   create_table "banks", force: :cascade do |t|
     t.string "name"
     t.integer "pid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bills", force: :cascade do |t|
+    t.date "date"
+    t.boolean "status"
+    t.decimal "discount"
+    t.integer "client_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_bills_on_client_id"
+    t.index ["user_id"], name: "index_bills_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -75,6 +87,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_27_131518) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bills", "clients"
+  add_foreign_key "bills", "users"
   add_foreign_key "clients", "users"
   add_foreign_key "measurements", "users"
   add_foreign_key "services", "measurements"
