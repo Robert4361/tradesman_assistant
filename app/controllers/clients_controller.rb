@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @clients = Client.all
+    @clients = current_user.clients.all
   end
 
   def show
