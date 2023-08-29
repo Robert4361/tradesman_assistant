@@ -33,8 +33,11 @@ class MeasurementsController < ApplicationController
   end
 
   def destroy
-    @measurement.destroy
-    redirect_to measurements_path, notice: "Measurement was successfully destroyed."
+    if @measurement.destroy
+      redirect_to measurements_path, notice: "Measurement was successfully destroyed."
+    else
+      redirect_to measurements_path, notice: "Measurement could not be destroyed"
+    end
   end
 
   private

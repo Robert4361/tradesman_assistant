@@ -1,4 +1,10 @@
 <%= turbo_frame_tag measurement do %>
+  <% if measurement.errors.any? %>
+    <div class="error-message">
+      <%= measurement.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
   <div class="measurement-card">
     <div class="info">
       <p>Name: <%= measurement.name %></p>
