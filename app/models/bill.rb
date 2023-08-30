@@ -1,5 +1,6 @@
 class Bill < ApplicationRecord
   after_initialize :set_defaults, if: :new_record?
+  after_find :calculate_price
   before_save :check_items
 
   belongs_to :client
@@ -8,7 +9,10 @@ class Bill < ApplicationRecord
   accepts_nested_attributes_for :bill_items, reject_if: :all_blank, allow_destroy: true
   validates :discount, presence: true
 
+  attr_accessor :price
+
   private
+
   def set_defaults
     self.status = false
     self.date = Date.current
@@ -20,4 +24,9 @@ class Bill < ApplicationRecord
       throw :abort
     end
   end
+
+  def calculate_price
+    self.price = (bill_items.sum { |bill_item| bill_item.service.price * bill_item.quantity }) * (1 - (discount / 100.0))
+  end
+
 end
