@@ -1,6 +1,6 @@
 <div class="bill-card">
   <div class="info">
-    <p>Client name: <%= bill.client.first_name + " " + bill.client.last_name %></p>
+    <p>Client name: <%= link_to bill.client.first_name + " " + bill.client.last_name, client_path(bill.client) %></p>
     <p>Discount: <%= bill.discount %>%</p>
 
     <div class="items">
