@@ -15,7 +15,7 @@
     <div class="bill-card-short">
       <p>Client: <%= link_to bill.client.first_name + " " + bill.client.last_name, bill.client %></p>
       <p>Price: <%= bill.price %></p>
-      <p>Status: <%= bill.status %></p>
+      <p>Paid? <%= bill.paid %></p>
       <p><%= link_to "More information", bill %></p>
     </div>
   <% end %>

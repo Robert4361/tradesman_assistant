@@ -5,7 +5,7 @@ class Bill < ApplicationRecord
 
   belongs_to :client
   belongs_to :user
-  has_many :bill_items
+  has_many :bill_items, dependent: :delete_all
   accepts_nested_attributes_for :bill_items, reject_if: :all_blank, allow_destroy: true
   validates :discount, presence: true
 

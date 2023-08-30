@@ -12,7 +12,17 @@
     </div>
 
     <p>Total price: <%= bill.price %></p>
-    <p>Payment status: <%= bill.status %></p>
+    <div id="paid">
+      <p>Payment status:
+        <% if bill.paid? %>
+          paid
+        <% else %>
+          unpaid
+        <% end %></p>
+      <% unless bill.paid? %>
+        <%= button_to "Set as paid", set_bill_as_paid_path(bill), method: :put %>
+      <% end %>
+    </div>
   </div>
   <div class="actions">
     <%= link_to "Back to bills", bills_path %>

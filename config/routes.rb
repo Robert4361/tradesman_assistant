@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :measurements
   resources :services
   resources :bills
+  put "set_as_paid/:id", to: "bills#set_as_paid", as: "set_bill_as_paid"
 
 end
