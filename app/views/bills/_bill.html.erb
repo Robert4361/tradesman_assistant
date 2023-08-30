@@ -1,0 +1,17 @@
+<div class="bill-card">
+  <div class="info">
+    <p>Client name: <%= bill.client.first_name + " " + bill.client.last_name %></p>
+    <p>Discount: <%= bill.discount %></p>
+
+    <div class="items">
+      <% bill.bill_items.each do |bill_item| %>
+        <p>Service: <%= bill_item.service.name %></p>
+        <p>Price: <%= bill_item.service.price %></p>
+        <p>Quantity: <%= bill_item.quantity %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= link_to "Back to bills", bills_path %>
+  </div>
+</div>

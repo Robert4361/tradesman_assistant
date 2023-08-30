@@ -18,7 +18,7 @@
     }
 }
 
-.user-card, .client-card {
+.user-card, .client-card, .bill-card {
     > .info {
         display: flex;
         gap: var(--space-s);
@@ -28,8 +28,15 @@
         border-radius: var(--border-radius);
         padding: var(--space-s);
         box-shadow: var(--shadow-small);
+
+        > .items {
+            display: flex;
+            gap: var(--space-xl);
+            margin-top: var(--space-m);
+        }
     }
-    >.actions {
+
+    > .actions {
         gap: var(--space-s);
         max-width: 40rem;
         background-color: var(--color-white);

@@ -15,9 +15,7 @@ class BillsController < ApplicationController
   def create
     @bill = current_user.bills.build(bill_params)
     if @bill.save
-      respond_to do |format|
-        format.html { render @bill }
-      end
+      redirect_to @bill, notice: "Bill was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
