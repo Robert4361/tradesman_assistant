@@ -1,4 +1,4 @@
-.bank-form, .measurement-form, .service-form {
+.bank-form, .measurement-form, .service-form, .bill-form, .bill-item-form {
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);

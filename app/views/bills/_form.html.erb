@@ -1,13 +1,19 @@
-<%= form_with model: bill, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+<%= form_with model: bill, class: "bill-form", data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
   <template data-nested-form-target="template">
     <%= f.fields_for :bill_items, BillItem.new, child_index: 'NEW_RECORD' do |item_fields| %>
       <%= render "bill_item_form", f: item_fields %>
     <% end %>
   </template>
 
+  <% if bill.errors.any? %>
+    <div class="error-message">
+      <%= bill.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
   <div class="row">
     <%= f.label :client %>
-    <%= f.select(:client_id, current_user.clients.all.map{ |c| [ c.first_name + " " + c.last_name, c.id ] }) %>
+    <%= f.select(:client_id, current_user.clients.all.map { |c| [c.first_name + " " + c.last_name, c.id] }) %>
   </div>
 
   <div class="row">
@@ -22,7 +28,11 @@
   <!-- Inserted elements will be injected before that target. -->
   <div data-nested-form-target="target"></div>
 
-  <button type="button" data-action="nested-form#add">Add bill item</button>
+  <div class="add">
+    <button type="button" data-action="nested-form#add">Add bill item</button>
+  </div>
 
-  <%= f.submit 'Save bill' %>
+  <div class="submit">
+    <%= f.submit 'Save bill' %>
+  </div>
 <% end %>
