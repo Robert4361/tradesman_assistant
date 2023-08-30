@@ -1,0 +1,22 @@
+<main class="statistics">
+  <h1>Statistics</h1>
+  <div class="bills-per-client">
+    <h2>Bills per client</h2>
+    <div class="items">
+      <% @bills_per_client.each do |key, value| %>
+        <p><%= key %>: <%= value %> bills</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="bills-per-year">
+    <h2>Bills per year</h2>
+    <% @bills_per_year.each do |key, value| %>
+      <div class="item">
+        <p>Year: <%= key %></p>
+        <p>Amount of bills: <%= value[0] %></p>
+        <p>Profit: <%= value[1] %></p>
+      </div>
+    <% end %>
+  </div>
+</main>

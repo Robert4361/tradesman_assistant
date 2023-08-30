@@ -1,0 +1,27 @@
+.statistics {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-small);
+    border-radius: var(--border-radius);
+    gap: var(--space-m);
+    margin: var(--space-m) var(--space-s);
+    max-width: 60rem;
+
+    > .bills-per-client {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+    }
+
+    > .bills-per-year {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+
+        > .item {
+            display: flex;
+            gap: var(--space-m);
+        }
+    }
+}

@@ -1,4 +1,5 @@
 class Bill < ApplicationRecord
+
   after_initialize :set_defaults, if: :new_record?
   after_find :calculate_price
   before_save :check_items
