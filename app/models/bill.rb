@@ -14,7 +14,7 @@ class Bill < ApplicationRecord
   private
 
   def set_defaults
-    self.status = false
+    self.paid = false
     self.date = Date.current
   end
 
