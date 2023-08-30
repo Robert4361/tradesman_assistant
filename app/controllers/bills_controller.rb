@@ -14,10 +14,9 @@ class BillsController < ApplicationController
 
   def create
     @bill = current_user.bills.build(bill_params)
-    binding.pry
     if @bill.save
       respond_to do |format|
-        render @bill
+        format.html { render @bill }
       end
     else
       render :new, status: :unprocessable_entity
