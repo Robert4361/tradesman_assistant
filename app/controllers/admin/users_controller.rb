@@ -15,6 +15,7 @@ class Admin::UsersController < ApplicationController
 
   def activate
     if @user.update(activated: true)
+      AdminMailer.with(user: @user).welcome_email.deliver_now!
       respond_to do |format|
         format.html { render @user, notice: "User successfully activated" }
         format.turbo_stream { render turbo_stream: turbo_stream.update("activated",
