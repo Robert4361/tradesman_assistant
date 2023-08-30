@@ -1,4 +1,4 @@
-.bank-card, .measurement-card, .user-card-short, .service-card {
+.bank-card, .measurement-card, .user-card-short, .service-card, .bill-card-short {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@
         > .items {
             display: flex;
             gap: var(--space-xl);
-            margin-top: var(--space-m);
+            margin: var(--space-m) 0;
         }
     }
 
