@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_30_141136) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_30_155350) do
   create_table "banks", force: :cascade do |t|
     t.string "name"
     t.integer "pid"
@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_141136) do
 
   create_table "bills", force: :cascade do |t|
     t.date "date"
-    t.boolean "status"
+    t.boolean "paid"
     t.integer "discount"
     t.integer "client_id", null: false
     t.integer "user_id", null: false
