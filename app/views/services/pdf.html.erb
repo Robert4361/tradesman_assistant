@@ -1,0 +1,37 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Measurement</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @services.each do |service| %>
+    <tr>
+      <td><%= service.name %></td>
+      <td><%= service.price %></td>
+      <td><%= service.measurement.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<style>
+    table {
+        font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    th {
+        background-color: hsl(350, 67%, 50%);
+        color: white;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    tr:nth-child(even) {
+        background-color: hsl(0, 85%, 96%);
+    }
+</style>

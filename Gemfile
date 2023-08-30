@@ -76,3 +76,7 @@ end
 gem "devise", "~> 4.9"
 
 gem "responders"
+
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'

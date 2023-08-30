@@ -3,7 +3,13 @@ class ServicesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @services = current_user.services.all
+    respond_to do |format|
+      format.html { @services = current_user.services.all }
+      format.pdf do
+        @services = current_user.services.all
+        render pdf: "Price list", template: "services/pdf", formats: [:html]
+      end
+    end
   end
 
   def new

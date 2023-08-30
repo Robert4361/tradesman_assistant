@@ -8,6 +8,7 @@
 
   <div class="header">
     <h1>List of services</h1>
+    <%= link_to "Export as pdf", services_path(format: :pdf), target: :blank %>
     <%= link_to "New service", new_service_path, data: { turbo_frame: dom_id(Service.new) } %>
   </div>
 
