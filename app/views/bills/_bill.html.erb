@@ -1,7 +1,7 @@
 <div class="bill-card">
   <div class="info">
     <p>Client name: <%= bill.client.first_name + " " + bill.client.last_name %></p>
-    <p>Discount: <%= bill.discount %></p>
+    <p>Discount: <%= bill.discount %>%</p>
 
     <div class="items">
       <% bill.bill_items.each do |bill_item| %>
@@ -10,6 +10,9 @@
         <p>Quantity: <%= bill_item.quantity %></p>
       <% end %>
     </div>
+
+    <p>Total price: <%= bill.price %></p>
+    <p>Payment status: <%= bill.status %></p>
   </div>
   <div class="actions">
     <%= link_to "Back to bills", bills_path %>
