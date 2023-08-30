@@ -1,0 +1,49 @@
+<h1>Bill for <%= @bill.client.first_name + " " + @bill.client.last_name %></h1>
+
+<div class="items">
+  <table>
+    <thead>
+    <tr>
+      <th>Service</th>
+      <th>Price</th>
+      <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @bill.bill_items.each do |bill_item| %>
+      <div class="item">
+        <tr>
+          <td>Service: <%= bill_item.service.name %></td>
+          <td>Price: <%= bill_item.service.price %></td>
+          <td>Quantity: <%= bill_item.quantity %></td>
+        </tr>
+      </div>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<h3>Discount: <%= @bill.discount %>%</h3>
+
+<h2>Total price: <%= @bill.price %></h2>
+
+
+<style>
+    table {
+        font-family: Tahoma, Geneva, sans-serif;
+    }
+
+    th {
+        background-color: hsl(350, 67%, 50%);
+        color: white;
+    }
+
+    th, td {
+        padding: 15px;
+    }
+
+    tr:nth-child(even) {
+        background-color: hsl(0, 85%, 96%);
+    }
+</style>

@@ -6,6 +6,12 @@ class BillsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Bill", template: "bills/pdf", formats: [:html]
+      end
+    end
   end
 
   def new

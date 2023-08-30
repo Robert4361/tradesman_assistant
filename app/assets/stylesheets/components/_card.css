@@ -43,7 +43,8 @@
     }
 
     > .actions {
-        gap: var(--space-s);
+        display: flex;
+        gap: var(--space-m);
         max-width: 40rem;
         background-color: var(--color-white);
         border-radius: var(--border-radius);
