@@ -5,9 +5,11 @@
 
     <div class="items">
       <% bill.bill_items.each do |bill_item| %>
-        <p>Service: <%= bill_item.service.name %></p>
-        <p>Price: <%= bill_item.service.price %></p>
-        <p>Quantity: <%= bill_item.quantity %></p>
+        <div class="item">
+          <p>Service: <%= bill_item.service.name %></p>
+          <p>Price: <%= bill_item.service.price %></p>
+          <p>Quantity: <%= bill_item.quantity %></p>
+        </div>
       <% end %>
     </div>
 
