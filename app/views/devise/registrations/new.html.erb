@@ -4,72 +4,76 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :email %><br/>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="left">
+      <div class="field">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :first_name %><br/>
+        <%= f.text_field :first_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :last_name %><br/>
+        <%= f.text_field :last_name %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br/>
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+    <div class="right">
+      <div class="field">
+        <%= f.label :business_name %><br/>
+        <%= f.text_field :business_name %>
+      </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br/>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+      <div class="field">
+        <%= f.label :address %><br/>
+        <%= f.text_field :address %>
+      </div>
 
-    <div class="field">
-      <%= f.label :first_name %><br/>
-      <%= f.text_field :first_name %>
-    </div>
+      <div class="field">
+        <%= f.label :post_number %><br/>
+        <%= f.number_field :post_number %>
+      </div>
 
-    <div class="field">
-      <%= f.label :last_name %><br/>
-      <%= f.text_field :last_name %>
-    </div>
+      <div class="field">
+        <%= f.label :city %><br/>
+        <%= f.text_field :city %>
+      </div>
 
-    <div class="field">
-      <%= f.label :business_name %><br/>
-      <%= f.text_field :business_name %>
-    </div>
+      <div class="field">
+        <%= f.label :pid %><br/>
+        <%= f.number_field :pid %>
+      </div>
 
-    <div class="field">
-      <%= f.label :address %><br/>
-      <%= f.text_field :address %>
-    </div>
+      <div class="field">
+        <%= f.label :iban %><br/>
+        <%= f.text_field :iban %>
+      </div>
 
-    <div class="field">
-      <%= f.label :post_number %><br/>
-      <%= f.number_field :post_number %>
-    </div>
+      <div class="field">
+        <%= f.label :business_description %><br/>
+        <%= f.text_area :business_description %>
+      </div>
 
-    <div class="field">
-      <%= f.label :city %><br/>
-      <%= f.text_field :city %>
-    </div>
-
-    <div class="field">
-      <%= f.label :pid %><br/>
-      <%= f.number_field :pid %>
-    </div>
-
-    <div class="field">
-      <%= f.label :iban %><br/>
-      <%= f.text_field :iban %>
-    </div>
-
-    <div class="field">
-      <%= f.label :business_description %><br/>
-      <%= f.text_area :business_description %>
-    </div>
-
-    <div class="field">
-      <%= f.label :bank %><br/>
-      <%= f.select(:bank_id, @bank_options) %>
+      <div class="field">
+        <%= f.label :bank %><br/>
+        <%= f.select(:bank_id, @bank_options) %>
+      </div>
     </div>
 
     <div class="actions">

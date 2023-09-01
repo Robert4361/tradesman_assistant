@@ -1,0 +1,13 @@
+<div class="guests-index">
+  <% @users.each do |user| %>
+    <p><%= user.business_name %></p>
+    <% user.services.each do |service| %>
+      <p>
+        <%= service.name %>
+      </p>
+      <p>
+        <%= service.price %>
+      </p>
+    <% end %>
+  <% end %>
+</div>

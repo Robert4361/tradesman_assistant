@@ -1,0 +1,11 @@
+button {
+    padding: var(--space-xxxs) var(--space-xs);
+    border-radius: var(--border-radius);
+
+    &:hover {
+        background-color: black;
+        color: var(--color-white);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+}

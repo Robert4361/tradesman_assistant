@@ -1,0 +1,14 @@
+.submit {
+    > input {
+        padding: var(--space-xxxs) var(--space-xs);
+        border-radius: var(--border-radius);
+        border-color: var(--color-primary);
+
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    }
+}

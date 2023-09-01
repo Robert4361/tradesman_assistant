@@ -13,8 +13,9 @@
         display: flex;
         flex: 0 0 auto;
         align-self: flex-start;
-        gap: var(--space-xs);
+        gap: var(--space-m);
         align-items: center;
+        flex-direction: row;
     }
 }
 

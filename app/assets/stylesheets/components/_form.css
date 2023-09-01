@@ -11,6 +11,8 @@
     > .rows {
         display: flex;
         gap: var(--space-xs);
+        align-items: center;
+        justify-content: space-between;
 
         > .submit {
             display: flex;
@@ -42,9 +44,39 @@
     }
 }
 
-.registration-form, .login-form {
-    margin: var(--space-s) var(--space-m);
+.login-form, .registration-form {
     display: flex;
     flex-direction: column;
-    gap: var(--space-s);
+    gap: var(--space-m);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary);
+    width: fit-content;
+    margin: 80px auto 0;
+    padding: var(--space-xl) var(--space-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-large);
+
+    .actions {
+        > input {
+            padding: var(--space-xxxs) var(--space-xs);
+            border-radius: var(--border-radius);
+
+            &:hover {
+                background-color: black;
+                color: var(--color-white);
+                transition: 0.5s;
+                cursor: pointer;
+            }
+        }
+    }
 }
+
+/* .registration-form {
+    display: flex;
+    flex-direction: column;
+    > #new_user {
+        display: flex;
+    }
+}
+ */
