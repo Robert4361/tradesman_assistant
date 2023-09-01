@@ -1,13 +1,21 @@
 <div class="guests-index">
-  <% @users.each do |user| %>
-    <p><%= user.business_name %></p>
-    <% user.services.each do |service| %>
-      <p>
-        <%= service.name %>
-      </p>
-      <p>
-        <%= service.price %>
-      </p>
+  <div class="users">
+    <% @users.each do |user| %>
+      <div class="user">
+        <p><%= user.business_name %></p>
+        <div class="services">
+          <% user.services.each do |service| %>
+            <div class="service">
+              <p>
+                <%= service.name %>
+              </p>
+              <p>
+                Price: <%= service.price %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
+  </div>
 </div>
