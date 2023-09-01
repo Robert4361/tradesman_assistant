@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :bills
   put "set_as_paid/:id", to: "bills#set_as_paid", as: "set_bill_as_paid"
   resources :statistics, only: [:index]
+  resources :guests, only: [:index]
 end
