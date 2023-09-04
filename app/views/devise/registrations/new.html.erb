@@ -1,8 +1,9 @@
 <div class="registration-form">
   <h2>Sign up</h2>
 
+  <%= render "devise/shared/error_messages", resource: resource %>
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="left">
       <div class="field">
@@ -32,9 +33,7 @@
         <%= f.label :last_name %><br/>
         <%= f.text_field :last_name %>
       </div>
-    </div>
 
-    <div class="right">
       <div class="field">
         <%= f.label :business_name %><br/>
         <%= f.text_field :business_name %>
@@ -44,7 +43,9 @@
         <%= f.label :address %><br/>
         <%= f.text_field :address %>
       </div>
+    </div>
 
+    <div class="right">
       <div class="field">
         <%= f.label :post_number %><br/>
         <%= f.number_field :post_number %>
@@ -80,6 +81,4 @@
       <%= f.submit "Sign up" %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
 </div>

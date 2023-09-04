@@ -72,11 +72,8 @@
     }
 }
 
-/* .registration-form {
-    display: flex;
-    flex-direction: column;
-    > #new_user {
-        display: flex;
-    }
+.registration-form #new_user, .registration-form #edit_user {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-l);
 }
- */
