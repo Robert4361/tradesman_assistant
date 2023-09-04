@@ -1,6 +1,6 @@
 class GuestsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    @users = User.all
+    @pagy, @users = pagy(User.where(admin: false), items: 3)
   end
 end
