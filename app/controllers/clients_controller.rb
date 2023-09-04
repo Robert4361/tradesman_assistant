@@ -3,7 +3,7 @@ class ClientsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @clients = current_user.clients.all
+    @pagy, @clients = pagy(current_user.clients.all, items: 8)
   end
 
   def show

@@ -17,4 +17,6 @@
   <%= turbo_frame_tag "services" do %>
     <%= render @services %>
   <% end %>
+
+  <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 </main>

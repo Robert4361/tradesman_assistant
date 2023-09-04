@@ -17,4 +17,6 @@
       Email: <%= client.email %>
     </div>
   <% end %>
+
+  <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 </main>
