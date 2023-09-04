@@ -7,24 +7,28 @@
         > .user {
             display: flex;
             flex-direction: column;
-            gap: var(--space-xl);
+            gap: var(--space-m);
             font-size: var(--font-size-xxl);
             box-shadow: var(--shadow-small);
             padding: var(--space-l);
             > .services {
                 display: flex;
-                gap: var(--space-l);
+                gap: var(--space-m);
+                overflow-x: auto;
+                overflow-y: hidden;
                 > .service {
-                    font-size: var(--font-size-xl);
+                    font-size: var(--font-size-l);
                     box-shadow: 0 0 15px #e59898;
                     border-radius: var(--border-radius);
                     display: flex;
                     flex-direction: column;
-                    gap: var(--space-l);
-                    padding: var(--space-l);
-                    width: 10rem;
-                    height: 10rem;
-                    justify-content: center;
+                    gap: var(--space-xs);
+                    padding: var(--space-m);
+                    min-width: 8rem;
+                    height: 7rem;
+                    justify-content: space-between;
+                    margin-bottom: 0.5rem;
+                    padding-bottom: 0.5rem;
                 }
             }
         }
