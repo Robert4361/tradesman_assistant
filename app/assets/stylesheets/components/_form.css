@@ -22,20 +22,20 @@
 }
 
 .client-form {
+    margin: var(--space-s) auto;
     display: flex;
     gap: var(--space-s);
-    margin: var(--space-s) var(--space-m);
     flex-direction: column;
-    max-width: 30rem;
+    max-width: 40rem;
     background-color: var(--color-white);
     border-radius: var(--border-radius);
-    padding: var(--space-s);
+    padding: var(--space-l);
     box-shadow: var(--shadow-small);
 
     > .rows {
         display: flex;
         flex-direction: column;
-        gap: var(--space-s);
+        gap: var(--space-l);
 
         > .row {
             display: flex;
@@ -76,4 +76,28 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-l);
+}
+
+.service-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: var(--space-m);
+    background-color: var(--color-white);
+    padding: var(--space-xs) var(--space-m);
+
+    > .rows {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--space-xs);
+        align-items: center;
+        justify-content: space-between;
+
+        > .submit {
+            display: flex;
+            align-items: end;
+        }
+    }
 }
