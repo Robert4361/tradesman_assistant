@@ -1,16 +1,18 @@
 <div class="nested-form-wrapper bill-item-form" data-new-record="<%= f.object.new_record? %>">
-  <div class="row">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
-  </div>
+  <div class="rows">
+    <div class="row">
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity %>
+    </div>
 
-  <div class="row">
-    <%= f.label :service %>
-    <%= f.select(:service_id, current_user.services.all.map{ |s| [ s.name, s.id ] }) %>
-  </div>
+    <div class="row">
+      <%= f.label :service %>
+      <%= f.select(:service_id, current_user.services.all.map{ |s| [ s.name, s.id ] }) %>
+    </div>
 
-  <div class="remove">
-    <button type="button" data-action="nested-form#remove">Remove bill item</button>
+    <div class="remove">
+      <button type="button" data-action="nested-form#remove">Remove bill item</button>
+    </div>
   </div>
 
   <%= f.hidden_field :_destroy %>
