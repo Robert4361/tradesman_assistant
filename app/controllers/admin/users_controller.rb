@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
 
   def index
     if params[:activated] == "false"
-      @users = User.where(activated?: false)
+      @users = User.where(activated: false)
     else
       @users = User.all
     end
