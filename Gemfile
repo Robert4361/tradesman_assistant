@@ -80,3 +80,4 @@ gem "responders"
 gem 'wicked_pdf'
 
 gem 'wkhtmltopdf-binary'
+gem "pagy", "~> 6.0"
