@@ -4,7 +4,7 @@ class ServicesController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html { @pagy, @services = pagy(Service.all, items: 4) }
+      format.html { @pagy, @services = pagy(current_user.services.all, items: 4) }
       format.pdf do
         @services = current_user.services.all
         render pdf: "Price list", template: "services/pdf", formats: [:html]
